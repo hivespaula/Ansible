@@ -1,8 +1,15 @@
 all:
-  children:
+  hosts:     # This is for ungrouped machines
+  vars:
+#     ansible_ssh_private_key_file: '~/.ssh/id_rsa'
+  children:  # This means we want our machines in groups
     test:
-      hosts:
+      hosts:  # this is for the hosts in our group
         ip-172-31-38-166.eu-west-2.compute.internal:
         ip-172-31-47-224.eu-west-2.compute.internal:
         ansible_user: ubuntu
         ansible_ssh_private_key_file: '~/.ssh/id_rsa'
+    vms:
+      children: # this is for using our groups as subgroups 
+        west:
+        east:
