@@ -2,9 +2,9 @@
 - hosts: all
   become: true
   vars:
-    host_ip: {{ inventory_hostname}}
+    host_ip: "{{ inventory_hostname}}"
   tasks:
   - name: Create a file containing hosts IP
     copy:
       dest: /home/ubuntu/host_ip_file
-      content: {{ host_ip }}
+      content: "{{ host_ip }}"
