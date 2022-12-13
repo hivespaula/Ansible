@@ -1,0 +1,3 @@
+all:
+  hosts:
+    IP_OR_DNS_OF_HOST1:
