@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Clone Github Repository
+    git:
+      repo: https://github.com/hivespaula/practice.git
+      dest: /home/ubuntu/clone_repo/
+      clone: yes
+      update: yes
