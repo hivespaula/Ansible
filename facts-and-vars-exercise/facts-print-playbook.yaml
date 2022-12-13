@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Print a message on the console, only if the OS is Ubuntu
+    debug:
+      msg: "print something"
+    when:  ansible_distribution == 'Ubuntu'
